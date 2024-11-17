@@ -57,13 +57,15 @@ function App() {
         {/* Show MJPEG stream when detection is started */}
         {isDetecting && (
           <img
-            src="https://02ae-122-15-88-227.ngrok-free.app/video_feed"
+            src="https://ccbc-122-15-88-227.ngrok-free.app/video_feed"
             alt="MJPEG Stream"
             onError={handleError} // Error handling
           />
         )}
         {/* Show a message when detection is stopped */}
-        {!isDetecting && !error && <h1>Start Detection</h1>}
+        {!isDetecting && !error && (
+          <h1 className="ErrorModal">Start Detection</h1>
+        )}
 
         {/* Custom error message */}
         {error && (
