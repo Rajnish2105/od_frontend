@@ -1,0 +1,65 @@
+/* Variables */
+:root {
+  --dark: #292c35;
+  --light: #f1f1f1;
+  --label: #111;
+}
+
+.theme-switcher {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Label styles */
+.switcher-label {
+  background-color: var(--label);
+  cursor: pointer;
+  width: 50px; /* Smaller width */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 5px; /* Smaller padding */
+  height: auto;
+  min-height: 25px; /* Smaller height */
+  border-radius: 20px; /* Slightly sharper radius */
+  position: relative;
+}
+
+/* Toggler styles */
+.switcher-label .switcher-toggler {
+  background-color: white;
+  width: 25px;
+  height: 25px;
+  z-index: 1;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  left: 5%; /* Adjust position */
+  top: 6%; /* Adjust position */
+  transition: all 0.4s ease;
+}
+
+/* Move the toggler when input is checked */
+.switcher-input:checked + .switcher-label .switcher-toggler {
+  left: 60%; /* Keep the toggler's final position */
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 480px) {
+  .switcher-label {
+    width: 30px; /* Even smaller width on mobile */
+    padding: 2px 4px; /* Even smaller padding */
+    min-height: 20px; /* Even smaller height */
+    border-radius: 15px; /* Smaller radius for mobile */
+    margin-right: 1rem;
+  }
+
+  .switcher-label .switcher-toggler {
+    width: 20px; /* Even smaller toggler on mobile */
+    height: 20px; /* Even smaller toggler on mobile */
+  }
+  #logo {
+    width: fit;
+    height: 30px;
+  }
+}

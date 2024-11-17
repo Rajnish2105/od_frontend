@@ -1,0 +1,58 @@
+/* Base styles for both themes */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  height: 100%;
+  transition: background-color 0.3s, color 0.3s;
+  box-sizing: border-box;
+}
+
+/* Light theme */
+body.light {
+  color: #213547;
+  background-color: #ffffff;
+}
+
+body.light button {
+  background-color: #f9f9f9; /* Light background */
+  color: #1a1a1a; /* Dark text color */
+  border: 1px solid #ddd; /* Light border */
+  padding: 0.5rem 1rem; /* Updated padding */
+  border-radius: 0.5rem; /* Updated border-radius */
+}
+
+body.light button:hover {
+  background-color: #e0e0e0; /* Lighter hover background */
+  border-color: #646cff;
+}
+
+/* Dark theme */
+body.dark {
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+body.dark button {
+  background-color: #333; /* Dark background */
+  color: #f9f9f9; /* Light text color */
+  border: 1px solid #444; /* Dark border */
+  padding: 0.5rem 1rem; /* Updated padding */
+  border-radius: 0.5rem; /* Updated border-radius */
+}
+
+body.dark button:hover {
+  background-color: #444; /* Darker hover background */
+  border-color: #646cff;
+}
