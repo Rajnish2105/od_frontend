@@ -43,7 +43,7 @@ body {
 .Detection {
   margin-top: 1.2rem;
   width: 200px;
-  height: 600px;
+  height: 500px;
   display: flex;
   flex-direction: column; /* Allow vertical growth */
   justify-content: center;
