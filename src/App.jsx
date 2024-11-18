@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import ThemeButton from "./ThemeButton";
 import logo from "./assets/Object Detection.svg";
-import CookieConsentBanner from "./CookiesConcent";
 
 function App() {
   // Get the initial theme and isDetecting states from localStorage
@@ -76,7 +75,6 @@ function App() {
           </div>
         )}
       </div>
-      <CookieConsentBanner />
     </div>
   );
 }
