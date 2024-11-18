@@ -57,7 +57,7 @@ function App() {
         {/* Show MJPEG stream when detection is started */}
         {isDetecting && (
           <img
-            src="https://ccbc-122-15-88-227.ngrok-free.app/video_feed"
+            src="https://4173-122-15-88-227.ngrok-free.app/video_feed"
             alt="MJPEG Stream"
             onError={handleError} // Error handling
           />
