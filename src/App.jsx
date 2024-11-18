@@ -44,6 +44,17 @@ function App() {
     document.body.className = theme;
   }, [theme]);
 
+  useEffect(() => {
+    async function intialcondition() {
+      const res = await fetch(
+        "https://80f7-122-15-88-227.ngrok-free.app/video_feed"
+      );
+      if (!res.ok) {
+        console.log("Your ngrok is down bro");
+      }
+    }
+  }, [10000]);
+
   return (
     <div className="App">
       <nav className="App-nav">
@@ -58,7 +69,7 @@ function App() {
         {/* Show MJPEG stream when detection is started */}
         {isDetecting && (
           <img
-            src=" https://80f7-122-15-88-227.ngrok-free.app/video_feed"
+            src="https://80f7-122-15-88-227.ngrok-free.app/video_feed"
             alt="MJPEG Stream"
             // onError={handleError}
           />
