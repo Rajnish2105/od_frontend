@@ -60,7 +60,7 @@ function App() {
           <img
             src=" https://80f7-122-15-88-227.ngrok-free.app/video_feed"
             alt="MJPEG Stream"
-            onError={handleError} // Error handling
+            // onError={handleError}
           />
         )}
         {/* Show a message when detection is stopped */}
