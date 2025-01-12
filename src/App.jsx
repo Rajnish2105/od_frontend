@@ -11,6 +11,8 @@ function App() {
   const [theme, setTheme] = useState(storedTheme);
   const [isDetecting, setIsDetecting] = useState(storedDetectionState);
   const [error, setError] = useState(false);
+  const [retryCount, setRetryCount] = useState(0);
+  const maxRetries = 3;
 
   // Toggle theme between light and dark
   const toggleTheme = () => {
@@ -21,6 +23,7 @@ function App() {
 
   // Handle start detection
   const handleStart = () => {
+    setRetryCount(0);
     setIsDetecting(true);
     setError(false);
     localStorage.setItem("isDetecting", true);
@@ -34,9 +37,18 @@ function App() {
 
   // Error handling for the image loading failure
   const handleError = () => {
-    setError(true);
-    setIsDetecting(false);
-    localStorage.setItem("isDetecting", false);
+    if (retryCount < maxRetries) {
+      setRetryCount((prev) => prev + 1);
+      // Attempt to reconnect after 2 seconds
+      setTimeout(() => {
+        setIsDetecting(true);
+      }, 2000);
+    } else {
+      setError(true);
+      setIsDetecting(false);
+      setRetryCount(0);
+      localStorage.setItem("isDetecting", false);
+    }
   };
 
   useEffect(() => {
@@ -57,7 +69,7 @@ function App() {
         {/* Show MJPEG stream when detection is started */}
         {isDetecting && (
           <img
-            src="https://9ae4-1-187-231-208.ngrok-free.app/video_feed"
+            src="https://c2ab-122-15-88-227.ngrok-free.app/video_feed"
             alt="MJPEG Stream"
             onError={handleError}
           />
